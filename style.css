@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+p{
+    font-weight: lighter;
+}
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+    
+}
+
+.click{
+    transition: all 300ms ease;
+}
+.click:hover{
+    transform: scale(1.1);
+}
+.click:active{
+    transform: scale(0.8);
+}
+
+
+.mail__btn{
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+    
+
+
+
+}
+
+.scroll{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+ .scroll__icon{
+    width: 20px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+.scroll__icon::after{
+    background-color: black;
+    content: "";
+    width: 4px;
+    height: 6px;
+    background-color: black;
+   border-radius: 2px;
+   animation: scroll 1000ms infinite alternate-reverse;
+}
+@keyframes scroll {
+    0% {
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+section{
+   background-color: rgb(245, 245, 245);
+}
+/* landing page */
+
+#landing-page{
+    min-height: 100vh;
+}
+
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    padding: 0px 30px;
+}
+
+.blue{
+    color: blue;
+}
+.title{
+    font-size: 76px;
+    margin-bottom: 12px;
+
+}
+.header__para{
+    font-size: 20px;
+    line-height: 2;
+    max-width: 450px;
+
+}
+
+.social__list{
+    margin-top: 16px;
+    display: flex;
+}
+
+.social__link{
+   color: blue;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+
+
+
+/* NAV */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100px;
+}
+  
+.personal-logo {
+    height: 50px;
+    width: 50px;
+    filter: invert(1);
+}
+  
+.nav__link--list {
+    display: flex;
+}
+  
+.nav__link {
+    margin: 0 12px;
+}
+  
+.nav__link--anchor {
+    text-decoration: none;
+    font-size: 16px;
+    color: #242424;
+    font-weight: 700;
+}
+  
+.fa-adjust {
+    font-size: 20px;
+}
+  
+
+
+/* my projects */
+
+.section__title{
+    font-size: 46px;
+    margin: 0px 0px 60px;
+    text-align: center;
+}
+
+.container{
+    padding: 50px 0px;
+    width: 100%
+}
+
+.row{
+    width: 100%;
+    max-width: 1100px;
+    padding:0px 12px ;
+ 
+}
+
+.projects{
+    margin-bottom:  135px; ;
+}
+
+
+.project__wrapper{
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 20px 80px 0 rgb(0 0 0/ 45%);
+    overflow: hidden;
+ 
+}
+.project__discription{
+    position: absolute ;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    color: aliceblue;
+    max-width: 550px;
+
+}
+.bg__project{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.project__discription--title{
+    font-size: 40px;
+}
+
+.project__discription--link{
+    color: white;
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+
+
+
+
+.img__project{
+    width: 100%;
+
+
+}
+
+
+
+
+/* footer */
+
+.footer{
+    background-color: black;
+    padding: 50px 0px 50px 0px;
+}
+
+.footer__row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  
+   
+}
+.white{
+    color: aliceblue;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer__logo{
+    width: 70px;
+   
+
+}
+
+.footer__links{
+   margin: 28px 0px;
+   width: 100%;
+   max-width: 500px;
+   display: flex;
+   justify-content: space-around;
+   
+}
+.footer__link{
+    text-decoration: none;
+    color: white;
+    
+   
+   
+}
+
+
+
+

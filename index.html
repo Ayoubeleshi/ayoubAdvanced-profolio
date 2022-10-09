@@ -4,33 +4,128 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script rel="stylesheets" href="style.css"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section id="landing-page">
         <nav>
             <figure>
-                <img src="./logo.svg">
+                <img class="personal-logo" src="./logo.svg">
             </figure>
+            
             <ul class="nav__link--list">
-                <li class="nav__links">
+                <li class="nav__link">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">About</a>
                 </li>
-                <li class="nav__links">
+                <li class="nav__link">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">Projects</a>
                 </li>
-                <li class="nav__links">
+                <li class="nav__link">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">Contact</a>
                 </li>
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">
+                    <i class="fas fa-adjust"></i>
+                </li>
             </ul>
         </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</h1>
+                <h1 class="title blue">I'm Ayoub.</h1>
+                <p class="header__para">I'm a <b class="blue">Frontend Software Engineer</b> with a strong passion for building web applications with great user experiences.
+                   <br> Here's a bit more <b class="blue">about me</b>
+                </p>
+                <div class="social__list">
+                    <a href="" class="social__link click" target="_blank">
+                       <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="social__link click" target="_blank">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                    <a href="" class="social__link click" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <button class="mail__btn click">
+            <i class="fas fa-envelope"></i>
+        <button>
+            <a href="#projects" class="scroll">
+                <div class="scroll__icon click">  </div>
+            </a>
+        
     </section>
+    <section id="Myprojects">
+        <div class="container">
+            <div class="row ">
+                   <H1 class="section__title">Here are some of my <span class="blue">projects</span></H1>
+                   <ul class="project__list">
+                        <li class="projects">
+                           <div class="project__wrapper">
+                              <img class="img__project" src="./Eportfolio YT.png" alt="">
+                              <div class="bg__project"></div>
+                                <div class="project__discription">
+                              
+                                   <h3 class="project__discription--title">
+                                    Car sales projects
+                                   </h3>
+                                  <h4 class="project__discription--sub-title">
+                                    Html, CSS, JavaScript, Vue, Vuex
+                                  </h4>
+                                  <p class="project__para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio veritatis quas iste blanditiis eius praesentium odit distinctio perferendis at vitae rerum corrupti ex possimus voluptatem, dicta esse quo aliquid.</p>
+                                   <div class="project__links">
+                                      <i class="fab fa-github-square"></i>
+
+                                    </div>
+
+                                </div>
+                           </div>
+                        </li>
+                        <li class="projects">
+                           <div class="project__wrapper">
+                              <img class="img__project" src="./Eportfolio YT.png" alt="">
+                           </div>
+                        </li>
+                        <li class="projects">
+                            <div class="project__wrapper">
+                              <img class="img__project" src="./Eportfolio YT.png" alt="">
+                            </div>
+                        </li>
+                   </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <img class="footer__logo" src="./logo.svg" alt="">
+
+        
+               <div class="footer__links">
+                     <a class="footer__link" href="">GitHub</a>
+                     <a class="footer__link" href="">Linkedin</a>
+                     <a class="footer__link" href="">Contact</a>
+                     <a class="footer__link" href="">Resume</a>
+                </div>
+      
+                <p class="white">Copyright c 2022 Ayoub Eleshi</p>
+
+            </div>
+
+        </div>
+    </footer>
+    
 </body>
 </html>
