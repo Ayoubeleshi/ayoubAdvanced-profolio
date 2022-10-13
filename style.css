@@ -146,6 +146,9 @@ section{
 
 .modal__about{
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    
 }
 .modal__contact{
     background-color: black;
@@ -174,17 +177,38 @@ section{
 
 .lanugage__list{
     display: flex;
-    justify-content: space-between;
-    margin: 19px;
+    
 
 }
+.modal__langage:hover .language__name{
+    transform: scale(1);
+    transition: all 300ms ease;
+    
 
+}
+.modal__langage:hover{
+    filter: brightness(80%);
+    transform: scale(0.9);
+}
+.language__name{
+   position: absolute;
+   bottom: -10px;
+   transform: scale(0);
+
+}
+.modal__langage{
+    width: 25%;
+    padding: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 300ms ease;
+}
    
 .lanugage{
-    width: 80%;
-    position: relative;
+    width: 100%;
     
-   
 }
 
 .contact__form{
@@ -192,22 +216,29 @@ section{
   position: relative;
 }
 
-.name{
-   width: 100%;
-}
 
-input{
+
+.input {
     width: 100%;
     background-color: black;
-    height: 50px;
-    margin: 10px;
+    color: white;
+    outline:none;
+    border: 3px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+    margin-bottom: 20px
    
 
 }
+textarea.input{
+    resize: vertical;
+    height: 100px
+}
 
 .form__bottun{
-    ;
-    color: blue;
+   
 }
 
 
