@@ -6,32 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+   </script>
+   <script type="text/javascript">
+      (function(){
+      emailjs.init("pYvAX6-MSg_xJxlda");
+       })();
+    </script>
 </head>
 <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="movebackground(event)">
         <nav>
             <figure>
-                <img class="personal__logo" src="./Black & Beige Luxury Aesthetic Minimal Font Logo-5.png">
+                <img id="persnal-logo" src="./Black & Beige Luxury Aesthetic Minimal Font Logo-5.png">
             </figure>
             
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="nav__link--anchor
+                    <a href="#Myprojects" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">Contact</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="togglecontrast()">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">
@@ -42,30 +51,34 @@
         <header class="header">
             <div class="header__content">
                 <h1 class="title">Hey</h1>
-                <h1 class="title blue">I'm Ayoub.</h1>
-                <p class="header__para">I'm a <b class="blue">Frontend Software Engineer</b> with a strong passion for building web applications with great user experiences.
-                   <br> Here's a bit more <b class="blue">about me</b>
+                <h1 class=" blue">I'm Ayoub.</h1>
+                <p class="header__para">I'm a <b class="blue" onclick="toggleModal()" >Frontend Software Engineer</b> with a strong passion for building web applications with great user experiences.
+                   <br> Here's a bit more <b class="blue" onclick="toggleModal()" >about me</b>
                 </p>
                 <div class="social__list">
                     <a href="#" class="social__link click" target="_blank">
-                       <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="#" class="social__link click" target="_blank">
-                        <i class="fab fa-github-square"></i>
+                         <i class="fab fa-github-square"></i>
                     </a>
                     <a href="#" class="social__link click" target="_blank">
-                        <i class="fas fa-file-pdf"></i>
+                         <i class="fas fa-file-pdf"></i>
                     </a>
+                  
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
-            <i class="fas fa-envelope"></i>
-        <button>
+        <a href="#">
+             <button class="mail__btn click" onclick="toggleModal()">
+                  <i class="fas fa-envelope"></i>
+             </button>
+        </a>
+        
             <a href="#projects" class="scroll">
                 <div class="scroll__icon click">  </div>
             </a>
-        <div class="modal">
+            <div class="modal">
                 <div class="modal__half modal__about">
                     <h3 class="modal__title">Heres a bit about me.</h3>
                     <h4 class="modal__subtitle">Frontennd Software Engineer</h4>
@@ -75,7 +88,7 @@
                     <div class="lanugage__list">
                         <figure class="modal__langage">
                             <img class="lanugage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
-                            <span class="language__name">HITML</span>
+                            <span class="language__name">HTML</span>
                         </figure>
                         <figure class="modal__langage" >
                             <img class="lanugage"src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
@@ -93,10 +106,11 @@
                 </div>
                 
                 <div class="modal__half modal__contact">
+                    <i class="fas fa-times modal__exit click"onclick="toggleModal()" ></i>
                     <h3 class="modal__title"> Lets have a chat </h3>
                     <h4 class="modal__subtitle">I'm currently open to new opportunities. </h4>
-                    <form class="contact__form">
-                        
+
+                    <form id="contact__form" onsubmit="contact(event)">
                         <div class="form__item">
                             <label>Name</label>
                             <input class="input" name="user_name" type="text" required>
@@ -104,22 +118,38 @@
                        
                         <div class="form__item">
                             <label>Email</label>
-                            <input class="input" name="user_Email" type="email" required>
+                            <input class="input" name="user_email" type="email" required>
                         </div>
                      
                         <div class="form__item">
                             <label>Message</label>
-                            <textarea class="input" name="message" type="text" ></textarea>
+                            <textarea class="input" name="message" type="text" required></textarea>
                         
                         </div>
+
+                        <button id="contact__submite" class="submit__botton">Send it my way </button>
                     
                         
                     </form>
+
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to speaking to you soon. </div>
     
                 </div>
+                
 
             </div>
-        
+            <img src="./circle.svg" class="shape shape--0">
+            <img src="./triangle.svg" class="shape shape--1">
+            <img src="./semi circle.svg" class="shape shape--2">
+            <img src="./squiggly.svg" class="shape shape--3">
+            <img src="./circle.svg" class="shape shape--4">
+            <img src="./triangle.svg" class="shape shape--5">
+            <img src="./circle.svg" class="shape shape--6">
+            <img src="./semi circle.svg" class="shape shape--7">
+            <img src="./squiggly.svg" class="shape shape--8">
     </section>
     <section id="Myprojects">
         <div class="container">
@@ -203,10 +233,12 @@
 
         
                <div class="footer__links">
-                     <a class=" footer__links link__hover-effect--white" href="">GitHub</a>
-                     <a class=" footer__links link__hover-effect--white" href="">Linkedin</a>
-                     <a class=" footer__links link__hover-effect--white" href="">Contact</a>
-                     <a class=" footer__links link__hover-effect--white" href="">Resume</a>
+                     <a class=" footer__links 
+                     link__hover-effect--white 
+                     link__hover-effect"href="">GitHub</a>
+                     <a class=" footer__links link__hover-effect--white link__hover-effect" href="#">Linkedin</a>
+                     <a class=" footer__links link__hover-effect--white link__hover-effect"href="#" onclick="toggleModal()">Contact</a>
+                     <a class=" footer__links link__hover-effect--white link__hover-effect " href="#">Resume</a>
                 </div>
       
                 <p class="white">Copyright c 2022 Ayoub Eleshi</p>

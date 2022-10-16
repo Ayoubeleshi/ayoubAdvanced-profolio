@@ -6,20 +6,26 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
-
+html{
+    scroll-behavior: smooth;
+}
 p{
     font-weight: lighter;
 }
-a{
-    text-decoration: none;
-}
+
 
 li{
     list-style-type: none;
     
 }
+h1{
+    font-size: 76px}
+button{
+     cursor: pointer;
+    }
 
 .click{
+    cursor: pointer;
     transition: all 300ms ease;
 }
 .click:hover{
@@ -28,7 +34,7 @@ li{
 .click:active{
     transform: scale(0.8);
 }
-.personal__logo{
+#persnal-logo{
     width: 80px;
 }
 
@@ -43,6 +49,9 @@ li{
     position: fixed;
     bottom: 32px;
     right: 40px;
+    z-index: 100;
+    box-shadow: 0 12px 30px 0 black;
+    cursor: pointer;
     
 
 
@@ -97,7 +106,7 @@ section{
 }
 
 .link__hover-effect:after{
-    content: "";
+    content: '';
     position: absolute;
     bottom: -3px;
     height: 3px;
@@ -127,12 +136,34 @@ section{
     width: 90%;
     max-width: 1100px;
     height: 600px;
-    box-shadow: 0 20px 80px 0 rgb( 0,0,0,0.55);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     text-align: left;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
+
+.modal--open .modal{
+    z-index: 60;
+    visibility: visible;
+    box-shadow: 0 20px 80px 0 rgb( 0,0,0,0.55);
+
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact
+{
+    transform: translateX(0%);
+}
+
+.modal__about{
+    background-color: white;
+    transform: translateX(-110%);
+}
+
+
 
 .modal__half{
     width: 50%;
@@ -140,6 +171,8 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    transition: all 300ms ease-in;
     
 
 }
@@ -153,6 +186,7 @@ section{
 .modal__contact{
     background-color: black;
     color: azure;
+    transform: translateX(110%);
 }
 
 
@@ -177,6 +211,7 @@ section{
 
 .lanugage__list{
     display: flex;
+    flex-wrap: wrap;
     
 
 }
@@ -218,7 +253,7 @@ section{
 
 
 
-.input {
+.input, textarea {
     width: 100%;
     background-color: black;
     color: white;
@@ -228,21 +263,149 @@ section{
     border-left: none;
     border-right: none;
     height: 40px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    transition: all 300ms ease;
    
-
 }
-textarea.input{
+textarea{
     resize: vertical;
-    height: 100px
+    height: 100px;
+    margin-top: 10px;
+    
+}
+.input:hover, textarea:hover{
+    border-color: aliceblue;
+}
+input:focus, textarea:focus{
+    border-color: blue;
 }
 
-.form__bottun{
-   
+.submit__botton{
+    font-size: 15px ;
+    background-color: rgb(192, 40, 192);
+    color: white;
+    padding: 10px;
+    border: 2px solid rgb(186, 36, 186);
+    font-weight: bold;
+    width: 70%;
+    transition: all 300ms ease;
+}
+.submit__botton:hover{
+    border-color:white;
+    background-color:transparent ;
+
+
+}
+.submit__botton:active{
+    border-color: rgb(183, 33, 183);
+    color: purple;
+}
+
+.modal__overlay--loading{
+    background-color: black;
+    font-size: 80px;
+}
+
+
+.fa-spinner{
+    animation: spinner 750ms infinite linear;
+}
+.dark-theme #persnal-logo
+
+
+@keyframes spinner{
+
+    0%{
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.modal__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100% ;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.modal__overlay--success{
+    background-color: rgb(36, 200, 36);
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+}
+
+.modal__overlay--visible{
+    z-index: 1;
+    display: flex;
 }
 
 
 
+
+.modal__exit{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
+}
+
+nav,
+.scroll,
+.header{
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;
+}
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .header__para,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-adjust,
+.dark-theme .scroll
+{
+    color: white;
+
+}
+.dark-theme section{
+    background-color: #242424; 
+    transition: all 300ms ease;
+}
+
+.dark-theme #persnal-logo{
+    filter: none;
+}
+
+.dark-theme .scroll__icon{
+    border-color: white;
+}
+.dark-theme .scroll__icon::after,
+.dark-theme .link__hover-effect--black:after{
+    background-color: white;
+}
+.dark-theme .mail__btn{
+    background-color: white;
+  color: rgb(198, 49, 218);
+}
 
 /* landing page */
 
@@ -258,10 +421,11 @@ textarea.input{
     width: 100%;
     max-width: 1000px;
     padding: 0px 30px;
+   
 }
 
 .blue{
-    color: blue;
+    color: rgb(188, 26, 188);
     font-weight: bold;
 }
 .title{
@@ -282,7 +446,7 @@ textarea.input{
 }
 
 .social__link{
-   color: blue;
+    color: rgb(188, 26, 188);
     padding: 6px;
     width: 32px;
     height: 32px;
@@ -291,6 +455,7 @@ textarea.input{
     display: flex;
     justify-content: center;
     align-items: center;
+   
    
 }
 
@@ -312,7 +477,7 @@ nav {
     height: 100px;
 }
   
-.personal-logo {
+#personal-logo {
     height: 50px;
     width: 50px;
     filter: invert(1);
@@ -453,6 +618,8 @@ nav {
 .footer{
     background-color: black;
     padding: 50px 0px 50px 0px;
+    position: relative;
+    display: flex;
 }
 
 .footer__row{
@@ -494,6 +661,107 @@ nav {
    
    
 }
+
+/* shapes */
+
+.shape{
+    position: fixed;
+}
+.shape--0{
+    top: 15vh;
+    left: 5vw;
+}
+.shape--1{
+    top: 15vh;
+    left: 50vw;
+}
+.shape--2{
+    top: 15vh;
+    left: 80vw;
+}
+.shape--3{
+    top: 50vh;
+    left: 5vw;
+}
+.shape--4{
+    top: 50vh;
+    left: 50vw;
+}
+.shape--5{
+    top: 50vh;
+    left: 80vw;
+}
+.shape--6{
+    top: 80vh;
+    left: 5vw;
+}
+.shape--7{
+    top: 80vh;
+    left: 50vw;
+}
+
+.shape--8{
+    top: 80vh;
+    left: 80vw;
+}
+
+
+
+
+
+@media (max-width:768px){
+    .title{
+        font-size: 80px;
+    }
+    .header__para{
+        font-size: 20px;
+    }
+    .modal{
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+        border-radius: 0;
+
+    }
+    .modal__half{
+        width: 100%;
+    }
+
+}
+
+
+
+
+@media(max-width: 480px) {
+    .title {
+        font-size: 52px;
+    
+}
+.header__para{
+    font-size: 18px;
+}
+.nav__link:first-child{
+    display: none;
+}
+.project__para{
+    display: none;
+}
+.project__discription{
+    left: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+.project__discription--sub-title{
+    margin-bottom: 8px;
+}
+
+
+
+
 
 
 
