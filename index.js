@@ -4,7 +4,7 @@
 
 let contrasttoggle = false;
 
-function togglecontrast(){
+function toggleContrast(){
 
     contrasttoggle = !contrasttoggle;
 
